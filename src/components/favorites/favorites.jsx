@@ -29,6 +29,8 @@ const Favorites = ({cards}) => {
   );
 };
 
-Favorites.propTypes = cardListPropTypes;
+Favorites.propTypes = {
+  cards: cardListPropTypes
+};
 
 export default Favorites;

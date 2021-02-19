@@ -79,6 +79,8 @@ const Main = ({cards}) => {
   );
 };
 
-Main.propTypes = cardListPropTypes;
+Main.propTypes = {
+  cards: cardListPropTypes
+};
 
 export default Main;

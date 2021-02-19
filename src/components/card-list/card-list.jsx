@@ -16,7 +16,9 @@ const CardList = ({cards}) => {
   );
 };
 
-CardList.propTypes = cardListPropTypes;
+CardList.propTypes = {
+  cards: cardListPropTypes
+};
 
 
 export default CardList;

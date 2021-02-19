@@ -32,6 +32,8 @@ const App = ({cards}) => {
   );
 };
 
-App.propTypes = cardListPropTypes;
+App.propTypes = {
+  cards: cardListPropTypes
+};
 
 export default App;
