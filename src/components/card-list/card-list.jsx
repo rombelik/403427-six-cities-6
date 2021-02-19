@@ -3,7 +3,7 @@ import Card from "../card/card";
 import cardPropTypes from "../../proptypes/card-proptypes";
 
 const CardList = ({cards}) => {
-  const [currentCardId, setCurrentCardId] = useState(0);
+  const setCurrentCardId = useState(0)[1];
 
   const mouseHandler = (id) => {
     setCurrentCardId(id);
