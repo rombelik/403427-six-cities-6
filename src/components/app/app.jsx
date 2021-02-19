@@ -1,24 +1,24 @@
 import React from 'react';
 import Main from "../main/main";
-import PropTypes from 'prop-types';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Favorites from "../favorites/favorites";
 import Room from "../room/room";
 import NotFound from "../not-found/not-found";
 import SignIn from "../sign-in/sign-in";
+import cardListPropTypes from "../../proptypes/card-list-prop-types";
 
-const App = ({places, cards}) => {
+const App = ({cards}) => {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Main places={places} cards={cards}/>
+          <Main cards={cards}/>
         </Route>
         <Route exact path="/login">
           <SignIn />
         </Route>
         <Route exact path="/favorites">
-          <Favorites />
+          <Favorites cards={cards}/>
         </Route>
         <Route exact path="/offer/:id">
           <Room />
@@ -33,21 +33,7 @@ const App = ({places, cards}) => {
 };
 
 App.propTypes = {
-  places: PropTypes.number.isRequired,
-  cards: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    type: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    price: PropTypes.number.isRequired,
-    isPremium: PropTypes.bool,
-    description: PropTypes.string.isRequired,
-    img: PropTypes.shape({
-      src: PropTypes.string,
-      width: PropTypes.number,
-      height: PropTypes.number,
-      alt: PropTypes.string
-    })
-  })).isRequired,
+  cards: cardListPropTypes
 };
 
 export default App;

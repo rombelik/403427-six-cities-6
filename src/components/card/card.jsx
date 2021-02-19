@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import cardPropTypes from "../../proptypes/card-prop-types";
 
-const Article = ({card}) => {
+const Card = ({card, mouseHandler}) => {
   return (
-    <div>
+    <div onMouseEnter={() => mouseHandler(card.id)}>
       <article className="cities__place-card place-card">
         {card.isPremium && <div className="place-card__mark"><span>Premium</span></div>}
         <div className="cities__image-wrapper place-card__image-wrapper">
@@ -26,7 +26,7 @@ const Article = ({card}) => {
           </div>
           <div className="place-card__rating rating">
             <div className="place-card__stars rating__stars">
-              <span style={{width: `${card.rating}%`}} />
+              <span style={{width: `${card.rating * 20}%`}} />
               <span className="visually-hidden">Rating</span>
             </div>
           </div>
@@ -40,20 +40,6 @@ const Article = ({card}) => {
   );
 };
 
-Article.propTypes = {
-  card: PropTypes.shape({
-    type: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    price: PropTypes.number.isRequired,
-    isPremium: PropTypes.bool,
-    description: PropTypes.string.isRequired,
-    img: PropTypes.shape({
-      src: PropTypes.string,
-      width: PropTypes.number,
-      height: PropTypes.number,
-      alt: PropTypes.string
-    })
-  }).isRequired
-};
+Card.propTypes = cardPropTypes;
 
-export default Article;
+export default Card;

@@ -1,14 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Article from "../article/article";
 import Header from "../header/header";
+import CardList from "../card-list/card-list";
+import cardListPropTypes from "../../proptypes/card-list-prop-types";
 
-const Main = ({places, cards}) => {
+const Main = ({cards}) => {
   return (
     <div>
-      <div style={{display: `none`}}>
-        <svg xmlns="http://www.w3.org/2000/svg"><symbol id="icon-arrow-select" viewBox="0 0 7 4"><path fillRule="evenodd" clipRule="evenodd" d="M0 0l3.5 2.813L7 0v1.084L3.5 4 0 1.084V0z" /></symbol><symbol id="icon-bookmark" viewBox="0 0 17 18"><path d="M3.993 2.185l.017-.092V2c0-.554.449-1 .99-1h10c.522 0 .957.41.997.923l-2.736 14.59-4.814-2.407-.39-.195-.408.153L1.31 16.44 3.993 2.185z" /></symbol><symbol id="icon-star" viewBox="0 0 13 12"><path fillRule="evenodd" clipRule="evenodd" d="M6.5 9.644L10.517 12 9.451 7.56 13 4.573l-4.674-.386L6.5 0 4.673 4.187 0 4.573 3.549 7.56 2.483 12 6.5 9.644z" /></symbol></svg>
-      </div>
       <div className="page page--gray page--main">
         <Header />
         <main className="page__main page__main--index">
@@ -53,7 +50,7 @@ const Main = ({places, cards}) => {
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
-                <b className="places__found">{places} places to stay in Amsterdam</b>
+                <b className="places__found">{cards.length} places to stay in Amsterdam</b>
                 <form className="places__sorting" action="#" method="get">
                   <span className="places__sorting-caption">Sort by</span>
                   <span className="places__sorting-type" tabIndex={0}>
@@ -69,9 +66,7 @@ const Main = ({places, cards}) => {
                     <li className="places__option" tabIndex={0}>Top rated first</li>
                   </ul>
                 </form>
-                <div className="cities__places-list places__list tabs__content">
-                  {cards.map((item) => <Article card={item} key={item.id}/>)}
-                </div>
+                <CardList cards={cards}/>
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map" />
@@ -85,21 +80,7 @@ const Main = ({places, cards}) => {
 };
 
 Main.propTypes = {
-  places: PropTypes.number.isRequired,
-  cards: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    type: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    price: PropTypes.number.isRequired,
-    isPremium: PropTypes.bool,
-    description: PropTypes.string.isRequired,
-    img: PropTypes.shape({
-      src: PropTypes.string,
-      width: PropTypes.number,
-      height: PropTypes.number,
-      alt: PropTypes.string
-    })
-  })).isRequired,
+  cards: cardListPropTypes
 };
 
 export default Main;
