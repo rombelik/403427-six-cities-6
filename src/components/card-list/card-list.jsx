@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Card from "../card/card";
-import cardPropTypes from "../../proptypes/card-proptypes";
+import cardListPropTypes from "../../proptypes/card-list-prop-types";
 
 const CardList = ({cards}) => {
   const setCurrentCardId = useState(0)[1];
@@ -16,7 +16,7 @@ const CardList = ({cards}) => {
   );
 };
 
-CardList.propTypes = cardPropTypes;
+CardList.propTypes = cardListPropTypes;
 
 
 export default CardList;

@@ -1,5 +1,5 @@
 import React from 'react';
-import cardPropTypes from "../../proptypes/card-proptypes";
+import cardPropTypes from "../../proptypes/card-prop-types";
 
 const FavoriteCard = ({card}) => {
   return (
@@ -41,6 +41,6 @@ const FavoriteCard = ({card}) => {
   );
 };
 
-FavoriteCard.propTypes = cardPropTypes.cards;
+FavoriteCard.propTypes = cardPropTypes;
 
 export default FavoriteCard;

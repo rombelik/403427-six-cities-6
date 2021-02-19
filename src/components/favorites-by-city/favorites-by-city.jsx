@@ -1,5 +1,5 @@
 import React from 'react';
-import cardPropTypes from "../../proptypes/card-proptypes";
+import cardListPropTypes from "../../proptypes/card-list-prop-types";
 import FavoriteCard from "../favorite-card/favorite-card";
 
 const FavoritesByCity = ({cards, city}) => {
@@ -21,6 +21,6 @@ const FavoritesByCity = ({cards, city}) => {
   );
 };
 
-FavoritesByCity.propTypes = cardPropTypes;
+FavoritesByCity.propTypes = cardListPropTypes;
 
 export default FavoritesByCity;

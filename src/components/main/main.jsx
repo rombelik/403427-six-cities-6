@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "../header/header";
-import cardPropTypes from "../../proptypes/card-proptypes";
 import CardList from "../card-list/card-list";
+import cardListPropTypes from "../../proptypes/card-list-prop-types";
 
 const Main = ({cards}) => {
   return (
@@ -79,6 +79,6 @@ const Main = ({cards}) => {
   );
 };
 
-Main.propTypes = cardPropTypes;
+Main.propTypes = cardListPropTypes;
 
 export default Main;

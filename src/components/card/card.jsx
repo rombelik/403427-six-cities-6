@@ -1,5 +1,5 @@
 import React from 'react';
-import cardPropTypes from "../../proptypes/card-proptypes";
+import cardPropTypes from "../../proptypes/card-prop-types";
 
 const Card = ({card, mouseHandler}) => {
   return (
@@ -40,6 +40,6 @@ const Card = ({card, mouseHandler}) => {
   );
 };
 
-Card.propTypes = cardPropTypes.cards;
+Card.propTypes = cardPropTypes;
 
 export default Card;

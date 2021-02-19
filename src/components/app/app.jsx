@@ -5,7 +5,7 @@ import Favorites from "../favorites/favorites";
 import Room from "../room/room";
 import NotFound from "../not-found/not-found";
 import SignIn from "../sign-in/sign-in";
-import cardPropTypes from "../../proptypes/card-proptypes";
+import cardListPropTypes from "../../proptypes/card-list-prop-types";
 
 const App = ({cards}) => {
   return (
@@ -32,6 +32,6 @@ const App = ({cards}) => {
   );
 };
 
-App.propTypes = cardPropTypes;
+App.propTypes = cardListPropTypes;
 
 export default App;
