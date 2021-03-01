@@ -72,7 +72,7 @@ const Main = ({cards}) => {
                 <CardList cards={cards}/>
               </section>
               <div className="cities__right-section">
-                <Map city={DEFAULT_CITY} points={OFFERS.map((v)=>[v.city.location.latitude, v.city.location.longitude])} />
+                <Map city={DEFAULT_CITY} offers={OFFERS} />
               </div>
             </div>
           </div>

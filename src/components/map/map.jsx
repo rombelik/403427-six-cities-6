@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 import leaflet from 'leaflet';
 import PropTypes from "prop-types";
 
-const Map = ({city, points}) => {
+const Map = ({city, offers}) => {
   const mapRef = useRef();
   useEffect(()=> {
     const zoom = city.zoom;
@@ -27,12 +27,16 @@ const Map = ({city, points}) => {
       })
       .addTo(mapRef.current);
 
-    points.forEach((point)=> {
+    offers.forEach((card)=> {
       leaflet
-        .marker(point, {icon})
+        .marker({
+          lat: card.city.location.latitude,
+          lng: card.city.location.longitude,
+          zoom: card.city.location.zoom
+        }, {icon})
         .addTo(mapRef.current);
     });
-  });
+  }, [city, offers]);
   return (
     <div>
       <section ref={mapRef} id="map" className="cities__map map"/>
@@ -45,7 +49,7 @@ Map.propTypes = {
     coordinates: PropTypes.array,
     zoom: PropTypes.number.isRequired
   }),
-  points: PropTypes.arrayOf(PropTypes.array)
+  offers: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default Map;

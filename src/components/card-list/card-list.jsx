@@ -12,11 +12,7 @@ const CardList = ({cards}) => {
   return (
     <div className="cities__places-list places__list tabs__content">
       {cards.map((item) => <Card
-        id={item.id}
-        rating={item.rating}
-        description={item.description}
-        type={item.type}
-        isPremium={item.isPremium}
+        card={item}
         key={item.id}
         mouseHandler={mouseHandler}/>)}
     </div>
