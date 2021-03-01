@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import "leaflet/dist/leaflet.css";
+import './map.css';
 import leaflet from 'leaflet';
 import PropTypes from "prop-types";
 
