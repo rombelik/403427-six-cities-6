@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
-const cardPropTypes = {
-  bedrooms: PropTypes.number.isRequired,
+const cardPropTypes = PropTypes.shape({
+  bedrooms: PropTypes.number,
   city: PropTypes.shape({
     location: PropTypes.shape({
       latitude: PropTypes.number.isRequired,
@@ -20,19 +20,19 @@ const cardPropTypes = {
   }),
   id: PropTypes.number.isRequired,
   images: PropTypes.arrayOf(PropTypes.string.isRequired),
-  isFavorite: PropTypes.bool.isRequired,
+  isFavorite: PropTypes.bool,
   isPremium: PropTypes.bool.isRequired,
   location: PropTypes.shape({
     latitude: PropTypes.number.isRequired,
     longitude: PropTypes.number.isRequired,
     zoom: PropTypes.number.isRequired,
   }),
-  maxAdults: PropTypes.number.isRequired,
-  previewImage: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  maxAdults: PropTypes.number,
+  previewImage: PropTypes.string,
+  price: PropTypes.number,
   rating: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   type: PropTypes.string.isRequired,
-};
+});
 
 export default cardPropTypes;

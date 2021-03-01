@@ -2,6 +2,9 @@ import React from 'react';
 import Header from "../header/header";
 import CardList from "../card-list/card-list";
 import cardListPropTypes from "../../proptypes/card-list-prop-types";
+import Map from "../map/map";
+import OFFERS from "../../mocks/offers.js";
+import DEFAULT_CITY from "../../mocks/default_city";
 
 const Main = ({cards}) => {
   return (
@@ -69,7 +72,7 @@ const Main = ({cards}) => {
                 <CardList cards={cards}/>
               </section>
               <div className="cities__right-section">
-                <section className="cities__map map" />
+                <Map city={DEFAULT_CITY} offers={OFFERS} />
               </div>
             </div>
           </div>
