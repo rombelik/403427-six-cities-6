@@ -4,6 +4,12 @@ import leaflet from 'leaflet';
 import PropTypes from "prop-types";
 
 const Map = ({city, offers}) => {
+
+  const divStyle = {
+    width: `${500}`,
+    height: `${500}`
+  };
+
   const mapRef = useRef();
   useEffect(()=> {
     const zoom = city.zoom;
@@ -38,7 +44,7 @@ const Map = ({city, offers}) => {
     });
   }, [city, offers]);
   return (
-    <div>
+    <div style={divStyle}>
       <section ref={mapRef} id="map" className="cities__map map"/>
     </div>
   );

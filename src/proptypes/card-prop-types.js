@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const cardPropTypes = {
+const cardPropTypes = PropTypes.shape({
   bedrooms: PropTypes.number,
   city: PropTypes.shape({
     location: PropTypes.shape({
@@ -33,6 +33,6 @@ const cardPropTypes = {
   rating: PropTypes.number.isRequired,
   title: PropTypes.string,
   type: PropTypes.string.isRequired,
-};
+});
 
 export default cardPropTypes;
